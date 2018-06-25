@@ -48,7 +48,7 @@ describe('project repository', function () {
                 expect(json.keywords).to.eql(['newman', 'reporter', 'html']);
 
                 expect(json).to.have.property('engines');
-                expect(json.engines).to.eql({ node: '>=4' });
+                expect(json.engines).to.eql({ node: '>=6' });
             });
 
             it('should ignore applicable dependencies for GreenKeeper pull requests', function () {
