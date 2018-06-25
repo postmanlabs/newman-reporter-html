@@ -66,9 +66,11 @@ describe('project repository', function () {
                 expect(json.scripts).to.be.ok;
                 json.scripts && Object.keys(json.scripts).forEach(function (scriptName) {
                     var name = json.scripts[scriptName];
+
                     name = name.replace(/^(node\s|\.\/)/, '');
                     fs.stat(name, function (err) {
                         var fileDetails = path.parse(name);
+
                         expect(err).to.equal(null);
                         expect(fileDetails.ext).to.match(/^\.(sh|js)$/);
                     });
@@ -213,5 +215,4 @@ describe('project repository', function () {
             // expect(yml.safeLoad(fs.readFileSync('./CHANGELOG.yaml')), 'not a valid yaml').to.be.ok;
         });
     });
-
 });

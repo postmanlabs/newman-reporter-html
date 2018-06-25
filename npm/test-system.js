@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+/* global exit */
 require('shelljs/global');
 require('colors');
 
@@ -46,6 +47,7 @@ module.exports = function (exit) {
             recursive(SPEC_SOURCE_DIR, function (err, files) {
                 if (err) {
                     console.error(err);
+
                     return exit(1);
                 }
 

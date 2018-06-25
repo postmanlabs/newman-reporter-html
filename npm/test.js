@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+/* global exit */
 require('shelljs/global');
 require('colors');
 
