@@ -18,7 +18,8 @@
   "scripts": {
     "test": "node npm/test.js",
     "test-system": "node npm/test-system.js",
-    "test-lint": "node npm/test-lint.js"
+    "test-lint": "node npm/test-lint.js",
+    "test-integration": "node npm/test-integration.js"
   },
   "author": "Postman Labs <help@getpostman.com> (=)",
   "license": "Apache-2.0",

@@ -8,7 +8,8 @@ var prettyms = require('pretty-ms'),
 
 require('async').series([
     require('./test-lint'),
-    require('./test-system')
+    require('./test-system'),
+    require('./test-integration')
 ], function (code) {
     console.info(`\nnewman-reporter-html: duration ${prettyms(Date.now() - startedAt)}\n
         newman-reporter-html: ${code ? 'not ok' : 'ok'}!`[code ? 'red' : 'green']);
