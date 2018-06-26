@@ -27,6 +27,10 @@ Thumbs.db
 # - Allow sublime text project file to be commited in the development directory.
 !/develop/*.sublime-project
 
+# - Prevent CI output files from being Added
+/out/
+/newman/
+
 # - Prevent diff backups from SourceTree from showing as commit.
 *.BACKUP.*
 *.BASE.*
