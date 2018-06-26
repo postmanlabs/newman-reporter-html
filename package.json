@@ -41,11 +41,15 @@
     "jsdoc": "3.5.5",
     "jsdoc-to-markdown": "4.0.1",
     "mocha": "5.2.0",
+    "newman": "3.9.4",
     "packity": "0.3.2",
     "parse-gitignore": "0.5.1",
     "postman-jsdoc-theme": "0.0.3",
     "recursive-readdir": "2.2.2",
     "shelljs": "0.8.2"
+  },
+  "peerDependencies": {
+    "newman": "3.9.4"
   },
   "engines": {
     "node": ">=6"
