@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-/* global exit */
+/* global test, mkdir, rm, exit */
 require('shelljs/global');
 require('colors');
 
@@ -7,6 +7,10 @@ var Mocha = require('mocha'),
     newman = require('../node_modules/newman'),
     expect = require('chai').expect,
     recursive = require('recursive-readdir'),
+
+    NYC = require('nyc'),
+
+    COV_REPORT_PATH = '.coverage',
 
     /**
      * The directory containing integration test specs.
@@ -19,7 +23,17 @@ module.exports = function (exit) {
     // banner line
     console.info('Running Integration tests using mocha and shelljs...'.yellow.bold);
 
-    var mocha = new Mocha({ timeout: 60000 });
+    test('-d', COV_REPORT_PATH) && rm('-rf', COV_REPORT_PATH);
+    mkdir('-p', COV_REPORT_PATH);
+
+    var mocha = new Mocha({ timeout: 60000 }),
+        nyc = new NYC({
+            reporter: ['text', 'lcov'],
+            reportDir: COV_REPORT_PATH,
+            tempDirectory: COV_REPORT_PATH
+        });
+
+    nyc.wrap();
 
     recursive(SPEC_SOURCE_DIR, function (err, files) {
         if (err) {
@@ -42,6 +56,10 @@ module.exports = function (exit) {
             // clear references and overrides
             delete global.expect;
             delete global.newman;
+
+            nyc.reset();
+            nyc.writeCoverageFile();
+            nyc.report();
             exit(err);
         });
         mocha = null; // cleanup

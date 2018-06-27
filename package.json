@@ -43,6 +43,7 @@
     "jsdoc-to-markdown": "4.0.1",
     "mocha": "5.2.0",
     "newman": "3.9.4",
+    "nyc": "12.0.2",
     "packity": "0.3.2",
     "parse-gitignore": "0.5.1",
     "postman-jsdoc-theme": "0.0.3",
@@ -50,7 +51,7 @@
     "shelljs": "0.8.2"
   },
   "peerDependencies": {
-    "newman": "3.9.4"
+    "newman": "3"
   },
   "engines": {
     "node": ">=6"
