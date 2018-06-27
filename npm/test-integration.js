@@ -28,7 +28,7 @@ module.exports = function (exit) {
 
     var mocha = new Mocha({ timeout: 60000 }),
         nyc = new NYC({
-            reporter: ['text', 'lcov'],
+            reporter: ['text', 'text-summary', 'lcov'],
             reportDir: COV_REPORT_PATH,
             tempDirectory: COV_REPORT_PATH
         });
