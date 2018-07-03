@@ -2,12 +2,13 @@
 Advanced HTML reporter for [newman](https://github.com/postmanlabs/newman).
 
 ## Install
+> The installation should be global if newman is installed globally, local otherwise. (Replace -g from the command below with -S for a local installation)
+
 ```terminal
 $ npm install -g newman-reporter-html
 ```
 
 ## Usage
-In order to use this reporter, ensure that you have installed this at the same level as of newman.
 
 ```terminal
 $ newman run https://www.getpostman.com/collections/631643-f695cab7-6878-eb55-7943-ad88e1ccfd65-JsLv -r html
