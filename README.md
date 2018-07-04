@@ -28,7 +28,7 @@ The [default template](https://github.com/postmanlabs/newman-reporter-html/blob/
 
 | **newman-reporter-html** | **newman** | **node** |
 |:------------------------:|:----------:|:--------:|
-|          v0.1.0          | >= v3.9.5  | >= v6.x  |
+|          v0.1.0          | >= v3.10.0 | >= v6.x  |
 
 ---
 
