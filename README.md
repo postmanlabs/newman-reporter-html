@@ -63,7 +63,7 @@ The reporter and newman must be installed at the same level, the installation sh
 ### Getting different HTML output
 You are most probably getting in-built reporter output used in older versions of newman, Please check the newman's [compatibility](#compatibility) section above.
 
-> If you are facing any other problem, please check the open [issues][https://github.com/postmanlabs/newman-reporter-html/issues] or create new.
+> If you are facing any other problem, please check the open [issues](https://github.com/postmanlabs/newman-reporter-html/issues) or create new.
 
 ---
 
