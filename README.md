@@ -1,18 +1,18 @@
 # newman-reporter-html
 HTML reporter for [Newman](https://github.com/postmanlabs/newman) that provides the information about the collection run in HTML format.
-This needs to be used in conjunction with Newman so that it can recognise the options.
+This needs to be used in conjunction with Newman so that it can recognize HTML reporting options.
 
 ## Install
 > The installation should be global if newman is installed globally, local otherwise. (Replace -g from the command below with -S for a local installation)
 
-```terminal
+```console
 $ npm install -g newman-reporter-html
 ```
 
 ## Usage
 In order to enable this reporter, specify `html` in Newman's `-r` or `--reporters` option.
 
-```terminal
+```console
 $ newman run https://www.getpostman.com/collections/631643-f695cab7-6878-eb55-7943-ad88e1ccfd65-JsLv -r html
 ```
 
@@ -28,19 +28,19 @@ $ newman run https://www.getpostman.com/collections/631643-f695cab7-6878-eb55-79
 Custom templates (currently handlebars only) can be passed to the HTML reporter via `--reporter-html-template <path>` with `--reporters html` and `--reporter-html-export`.
 The [default template](https://github.com/postmanlabs/newman-reporter-html/blob/develop/lib/template-default.hbs) is used in all other cases.
 
-#### With Newman programmatically as a Node.js Library
+#### With Newman as a Library
 The CLI functionality is available for programmatic use as well.
 
 ```javascript
-var newman = require('newman');
+const newman = require('newman');
 
 newman.run({
-    collection: require('./sample-collection.json'),
+    collection: require('./examples/sample-collection.json'), // can also provide a URL or path to a local JSON file.
     reporters: 'html',
     reporter: {
         html: {
             export: './htmlResults.html', // If not specified, the file will be written to `newman/` in the current working directory.
-            template: './customTemplate.hbs'
+            template: './customTemplate.hbs' // optional, this will be picked up relative to the directory that Newman runs in.
         }
     }
 }, function (err) {
@@ -65,7 +65,6 @@ You are most probably getting in-built reporter output used in older versions of
 
 > If you are facing any other problem, please check the open [issues](https://github.com/postmanlabs/newman-reporter-html/issues) or create new.
 
----
 
 ## Community Support
 
@@ -74,7 +73,6 @@ If you are interested in talking to the Postman team and fellow Newman users, yo
 
 Sign in using your Postman account to participate in the discussions and don't forget to take advantage of the <a href="https://community.getpostman.com/search?q=newman">search bar</a> - the answer to your question might already be waiting for you! Don’t want to log in? Then lurk on the sidelines and absorb all the knowledge.
 
----
 
 ## License
 This software is licensed under Apache-2.0. Copyright Postdot Technologies, Inc. See the [LICENSE.md](LICENSE.md) file for more information.
