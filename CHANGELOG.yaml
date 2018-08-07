@@ -1,1 +1,5 @@
 # Newman HTML Reporter Changelog
+1.0.0:
+  date: 2018-08-07
+  initial release:
+    - 'Initial newman-reporter-html release'
