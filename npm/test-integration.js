@@ -3,9 +3,11 @@
 require('shelljs/global');
 require('colors');
 
-var Mocha = require('mocha'),
-    newman = require('../node_modules/newman'),
+var fs = require('fs'),
+    path = require('path'),
+    Mocha = require('mocha'),
     expect = require('chai').expect,
+    newman = require('../node_modules/newman'),
     recursive = require('recursive-readdir'),
 
     NYC = require('nyc'),
@@ -31,7 +33,9 @@ module.exports = function (exit) {
             reporter: ['text', 'text-summary', 'lcov'],
             reportDir: COV_REPORT_PATH,
             tempDirectory: COV_REPORT_PATH
-        });
+        }),
+        parentDir = path.join(__dirname, '..'),
+        symlinkDir = parentDir + '/node_modules/newman-reporter-html';
 
     nyc.wrap();
 
@@ -52,7 +56,13 @@ module.exports = function (exit) {
         global.expect = expect; // for easy reference
         global.newman = newman;
 
+        // create symlink so that Newman can locate the reporter
+        !fs.existsSync(symlinkDir) && fs.symlinkSync(parentDir, symlinkDir);
+
         mocha.run(function (err) {
+            // remove reporter symlink
+            fs.unlinkSync(symlinkDir);
+
             // clear references and overrides
             delete global.expect;
             delete global.newman;
