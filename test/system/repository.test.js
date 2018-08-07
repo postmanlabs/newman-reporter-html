@@ -89,11 +89,11 @@ describe('project repository', function () {
                     fs.readFile(name, function (error, content) {
                         expect(error).to.equal(null);
                         if (fileDetails.ext === '.sh') {
-                            expect(/^#!\/bin\/bash[\r\n][\W\w]*$/g.test(content),
+                            expect((/^#!\/bin\/bash[\r\n][\W\w]*$/g).test(content),
                                 `invalid or missing hashbang in ${name}`).to.be.ok;
                         }
                         else {
-                            expect(/^#!\/usr\/bin\/env\snode[\r\n][\W\w]*$/g.test(content),
+                            expect((/^#!\/usr\/bin\/env\snode[\r\n][\W\w]*$/g).test(content),
                                 `invalid or missing hashbang in ${name}`).to.be.ok;
                         }
                     });
@@ -168,8 +168,8 @@ describe('project repository', function () {
     describe('.ignore files', function () {
         var gitignorePath = '.gitignore',
             npmignorePath = '.npmignore',
-            npmignore = parseIgnore(npmignorePath),
-            gitignore = parseIgnore(gitignorePath);
+            npmignore = parseIgnore(fs.readFileSync(npmignorePath, 'utf8')),
+            gitignore = parseIgnore(fs.readFileSync(gitignorePath, 'utf8'));
 
         describe(gitignorePath, function () {
             it('should exist', function (done) {

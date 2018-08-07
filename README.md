@@ -54,6 +54,7 @@ newman.run({
 | **newman-reporter-html** | **newman** | **node** |
 |:------------------------:|:----------:|:--------:|
 |          v0.1.0          | >= v3.10.0 | >= v6.x  |
+|          v1.0.0          | >= v4.0.0  | >= v6.x  |
 
 ## Troubleshooting
 
