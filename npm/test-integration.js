@@ -57,7 +57,8 @@ module.exports = function (exit) {
         global.newman = newman;
 
         // create symlink so that Newman can locate the reporter
-        !fs.existsSync(symlinkDir) && fs.symlinkSync(parentDir, symlinkDir);
+        fs.existsSync(symlinkDir) && fs.unlinkSync(symlinkDir);
+        fs.symlinkSync(parentDir, symlinkDir);
 
         mocha.run(function (err) {
             // remove reporter symlink
