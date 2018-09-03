@@ -1,7 +1,4 @@
 # newman-reporter-html
-
-[![Greenkeeper badge](https://badges.greenkeeper.io/postmanlabs/newman-reporter-html.svg)](https://greenkeeper.io/)
-
 HTML reporter for [Newman](https://github.com/postmanlabs/newman) that provides the information about the collection run in HTML format.
 This needs to be used in conjunction with Newman so that it can recognize HTML reporting options.
 
