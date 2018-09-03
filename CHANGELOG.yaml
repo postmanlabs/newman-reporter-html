@@ -1,4 +1,8 @@
 # Newman HTML Reporter Changelog
+master:
+  fixed bugs:
+    - 'Fixed exported Newman version'
+
 1.0.1:
   date: 2018-08-09
   fixed bugs:
