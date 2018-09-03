@@ -1,5 +1,6 @@
 # Newman HTML Reporter Changelog
-master:
+1.0.2:
+  date: 2018-09-03
   fixed bugs:
     - 'Fixed exported Newman version'
 
