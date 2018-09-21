@@ -7,6 +7,15 @@
     "node": true,
     "es6": true
   },
+  "globals": {
+      "afterEach": true,
+      "beforeEach": true,
+      "describe": true,
+      "exec": true,
+      "expect": true,
+      "it": true,
+      "newman": true
+  },
   "rules": {
     // Mocha
     "mocha/handle-done-callback": "error",
