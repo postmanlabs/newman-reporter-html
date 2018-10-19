@@ -6,8 +6,8 @@ require('colors');
 var fs = require('fs'),
     path = require('path'),
     Mocha = require('mocha'),
+    shell = require('shelljs'),
     expect = require('chai').expect,
-    newman = require('../node_modules/newman'),
     recursive = require('recursive-readdir'),
 
     NYC = require('nyc'),
@@ -34,8 +34,7 @@ module.exports = function (exit) {
             reportDir: COV_REPORT_PATH,
             tempDirectory: COV_REPORT_PATH
         }),
-        parentDir = path.join(__dirname, '..'),
-        symlinkDir = parentDir + '/node_modules/newman-reporter-html';
+        tempDir = path.join(__dirname, '../.temp');
 
     nyc.wrap();
 
@@ -52,17 +51,23 @@ module.exports = function (exit) {
             mocha.addFile(file);
         });
 
+        // create a temp directory to test the reporter with newman
+        fs.existsSync(tempDir) && shell.rm('-rf', tempDir);
+        fs.mkdirSync(tempDir);
+
+        console.info('Installing newman & newman-reporter-html into the temp directory'.gray);
+        shell.exec('npm pack ../', { cwd: tempDir, silent: true });
+        shell.exec('npm pack ../node_modules/newman', { cwd: tempDir, silent: true });
+        shell.exec('npm i --prefix . *.tgz', { cwd: tempDir, silent: true });
+
         // start the mocha run
         global.expect = expect; // for easy reference
-        global.newman = newman;
-
-        // create symlink so that Newman can locate the reporter
-        fs.existsSync(symlinkDir) && fs.unlinkSync(symlinkDir);
-        fs.symlinkSync(parentDir, symlinkDir);
+        // eslint-disable-next-line security/detect-non-literal-require
+        global.newman = require(tempDir + '/node_modules/newman');
 
         mocha.run(function (err) {
-            // remove reporter symlink
-            fs.unlinkSync(symlinkDir);
+            // remove temp directory
+            shell.rm('-rf', tempDir);
 
             // clear references and overrides
             delete global.expect;
