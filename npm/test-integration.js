@@ -34,7 +34,7 @@ module.exports = function (exit) {
             reportDir: COV_REPORT_PATH,
             tempDirectory: COV_REPORT_PATH
         }),
-        tempDir = path.join(__dirname, '../.temp');
+        tempDir = path.join(__dirname, '..', '.temp');
 
     nyc.wrap();
 
@@ -55,7 +55,7 @@ module.exports = function (exit) {
         fs.existsSync(tempDir) && shell.rm('-rf', tempDir);
         fs.mkdirSync(tempDir);
 
-        console.info('Installing newman & newman-reporter-html into the temp directory'.gray);
+        console.info('\n  Installing newman & newman-reporter-html into the temp directory'.gray);
         shell.exec('npm pack ../', { cwd: tempDir, silent: true });
         shell.exec('npm pack ../node_modules/newman', { cwd: tempDir, silent: true });
         shell.exec('npm i --prefix . *.tgz', { cwd: tempDir, silent: true });
@@ -63,7 +63,7 @@ module.exports = function (exit) {
         // start the mocha run
         global.expect = expect; // for easy reference
         // eslint-disable-next-line security/detect-non-literal-require
-        global.newman = require(tempDir + '/node_modules/newman');
+        global.newman = require(path.join(tempDir, 'node_modules', 'newman'));
 
         mocha.run(function (err) {
             // remove temp directory
