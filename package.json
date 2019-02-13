@@ -24,7 +24,7 @@
   "author": "Postman Labs <help@getpostman.com> (=)",
   "license": "Apache-2.0",
   "dependencies": {
-    "filesize": "4.0.0",
+    "filesize": "4.1.1",
     "handlebars": "4.1.0",
     "lodash": "4.17.11",
     "pretty-ms": "4.0.0"
