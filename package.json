@@ -41,7 +41,7 @@
     "eslint-plugin-security": "1.4.0",
     "jsdoc": "3.5.5",
     "jsdoc-to-markdown": "4.0.1",
-    "mocha": "5.2.0",
+    "mocha": "6.0.0",
     "newman": "4.3.1",
     "nyc": "13.3.0",
     "packity": "0.3.2",
