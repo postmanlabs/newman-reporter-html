@@ -8,7 +8,6 @@ var fs = require('fs'),
     // yml = require('js-yaml'),
     parseIgnore = require('parse-gitignore');
 
-/* global describe, it, expect */
 describe('project repository', function () {
     describe('package.json', function () {
         var content,
