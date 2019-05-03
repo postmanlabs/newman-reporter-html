@@ -1,4 +1,8 @@
 # Newman HTML Reporter Changelog
+master:
+  chores:
+    - Updated dependencies
+
 1.0.2:
   date: 2018-09-03
   fixed bugs:
