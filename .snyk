@@ -1,0 +1,44 @@
+# Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.
+version: v1.13.5
+ignore: {}
+# patches apply the minimum changes required to fix a vulnerability
+patch:
+  SNYK-JS-LODASH-450202:
+    - newman > postman-collection-transformer > lodash:
+        patched: '2019-07-04T06:04:19.257Z'
+    - lodash:
+        patched: '2019-07-04T06:04:19.257Z'
+    - eslint-plugin-jsdoc > lodash:
+        patched: '2019-07-04T06:04:19.257Z'
+    - eslint-plugin-lodash > lodash:
+        patched: '2019-07-04T06:04:19.257Z'
+    - newman > lodash:
+        patched: '2019-07-04T06:04:19.257Z'
+    - newman > postman-runtime > lodash:
+        patched: '2019-07-04T06:04:19.257Z'
+    - mocha > yargs-unparser > lodash:
+        patched: '2019-07-04T06:04:19.257Z'
+    - eslint > table > lodash:
+        patched: '2019-07-04T06:04:19.257Z'
+    - newman > postman-collection > lodash:
+        patched: '2019-07-04T06:04:19.257Z'
+    - eslint > lodash:
+        patched: '2019-07-04T06:04:19.257Z'
+    - eslint > inquirer > lodash:
+        patched: '2019-07-04T06:04:19.257Z'
+    - nyc > istanbul-lib-instrument > @babel/types > lodash:
+        patched: '2019-07-04T06:04:19.257Z'
+    - newman > postman-runtime > async > lodash:
+        patched: '2019-07-04T06:04:19.257Z'
+    - newman > postman-runtime > postman-collection > lodash:
+        patched: '2019-07-04T06:04:19.257Z'
+    - newman > postman-runtime > postman-sandbox > lodash:
+        patched: '2019-07-04T06:04:19.257Z'
+    - nyc > istanbul-lib-instrument > @babel/traverse > @babel/types > lodash:
+        patched: '2019-07-04T06:04:19.257Z'
+    - newman > postman-runtime > postman-sandbox > uvm > lodash:
+        patched: '2019-07-04T06:04:19.257Z'
+    - nyc > istanbul-lib-instrument > @babel/traverse > @babel/generator > @babel/types > lodash:
+        patched: '2019-07-04T06:04:19.257Z'
+    - nyc > istanbul-lib-instrument > @babel/traverse > @babel/helper-function-name > @babel/helper-get-function-arity > @babel/types > lodash:
+        patched: '2019-07-04T06:04:19.257Z'

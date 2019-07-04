@@ -19,7 +19,9 @@
     "test": "node npm/test.js",
     "test-system": "node npm/test-system.js",
     "test-lint": "node npm/test-lint.js",
-    "test-integration": "node npm/test-integration.js"
+    "test-integration": "node npm/test-integration.js",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "author": "Postman Labs <help@getpostman.com> (=)",
   "license": "Apache-2.0",
@@ -27,7 +29,8 @@
     "filesize": "4.1.2",
     "handlebars": "4.1.2",
     "lodash": "4.17.11",
-    "pretty-ms": "5.0.0"
+    "pretty-ms": "5.0.0",
+    "snyk": "^1.189.0"
   },
   "devDependencies": {
     "async": "3.1.0",
@@ -62,5 +65,6 @@
       "cli-table3",
       "csv-parse"
     ]
-  }
+  },
+  "snyk": true
 }
