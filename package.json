@@ -60,7 +60,8 @@
     "ignore": [
       "cli-progress",
       "cli-table3",
-      "csv-parse"
+      "csv-parse",
+      "eslint-plugin-jsdoc"
     ]
   }
 }
