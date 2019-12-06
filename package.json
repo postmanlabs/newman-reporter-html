@@ -1,6 +1,6 @@
 {
   "name": "newman-reporter-html",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Newman HTML Reporter",
   "homepage": "https://github.com/postmanlabs/newman-reporter-html",
   "bugs": "https://github.com/postmanlabs/newman-reporter-html/issues",
