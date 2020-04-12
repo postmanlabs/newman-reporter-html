@@ -36,7 +36,7 @@
     "editorconfig": "0.15.3",
     "eslint": "5.16.0",
     "eslint-plugin-jsdoc": "4.8.3",
-    "eslint-plugin-lodash": "6.0.0",
+    "eslint-plugin-lodash": "7.0.0",
     "eslint-plugin-mocha": "6.2.2",
     "eslint-plugin-security": "1.4.0",
     "jsdoc": "3.6.3",
