@@ -37,7 +37,7 @@
     "eslint": "5.16.0",
     "eslint-plugin-jsdoc": "4.8.3",
     "eslint-plugin-lodash": "6.0.0",
-    "eslint-plugin-mocha": "6.2.2",
+    "eslint-plugin-mocha": "6.3.0",
     "eslint-plugin-security": "1.4.0",
     "jsdoc": "3.6.3",
     "jsdoc-to-markdown": "5.0.3",
