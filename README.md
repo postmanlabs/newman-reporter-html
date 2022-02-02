@@ -23,7 +23,7 @@ $ newman run https://www.getpostman.com/collections/631643-f695cab7-6878-eb55-79
 | CLI Option  | Description       |
 |-------------|-------------------|
 | `--reporter-html-export <path>` | Specify a path where the output HTML file will be written to disk. If not specified, the file will be written to `newman/` in the current working directory. |
-| `--reporter-html-template <path>` | Specify a path to the custom template which will be used to render the HTML report. This option depends on `--reporter html` and `--reporter-html-export` being present in the run command. If this option is not specified, the [default template](https://github.com/postmanlabs/newman-reporter-html/blob/develop/lib/template-default.hbs) is used |
+| `--reporter-html-template <path>` | Specify a path to the custom template which will be used to render the HTML report. This option depends on `--reporters html` and `--reporter-html-export` being present in the run command. If this option is not specified, the [default template](https://github.com/postmanlabs/newman-reporter-html/blob/develop/lib/template-default.hbs) is used |
 
 Custom templates (currently handlebars only) can be passed to the HTML reporter via `--reporter-html-template <path>` with `--reporters html` and `--reporter-html-export`.
 The [default template](https://github.com/postmanlabs/newman-reporter-html/blob/develop/lib/template-default.hbs) is used in all other cases.
