@@ -30,7 +30,7 @@
     "pretty-ms": "5.1.0"
   },
   "devDependencies": {
-    "async": "3.1.0",
+    "async": "3.2.2",
     "chai": "4.2.0",
     "colors": "1.4.0",
     "editorconfig": "0.15.3",
@@ -42,7 +42,7 @@
     "jsdoc": "3.6.3",
     "jsdoc-to-markdown": "5.0.3",
     "mocha": "6.2.2",
-    "newman": "4.5.7",
+    "newman": "5.3.1",
     "nyc": "14.1.1",
     "packity": "0.3.2",
     "parse-gitignore": "1.0.1",
