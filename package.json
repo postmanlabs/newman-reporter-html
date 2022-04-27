@@ -44,7 +44,7 @@
     "mocha": "6.2.2",
     "newman": "4.5.7",
     "nyc": "14.1.1",
-    "packity": "0.3.2",
+    "packity": "0.3.3",
     "parse-gitignore": "1.0.1",
     "postman-jsdoc-theme": "0.0.3",
     "recursive-readdir": "2.2.2",
