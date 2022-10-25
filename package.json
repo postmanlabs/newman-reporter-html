@@ -47,7 +47,7 @@
     "packity": "0.3.2",
     "parse-gitignore": "1.0.1",
     "postman-jsdoc-theme": "0.0.3",
-    "recursive-readdir": "2.2.2",
+    "recursive-readdir": "2.2.3",
     "shelljs": "0.8.3"
   },
   "peerDependencies": {
